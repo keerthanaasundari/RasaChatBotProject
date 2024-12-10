@@ -8,34 +8,53 @@ This Rasa chatbot project is designed to provide productivity tips, stress relie
 The chatbot includes several intents that cover a range of topics related to productivity, health, and personal well-being:
 
 **productivity_tips**: A collection of tips and suggestions to help users improve productivity.
+
 **focus_tips:** Tips to enhance focus and concentration during work or study.
+
 ****ask_for_stress_relief:** Advice on how to relieve stress.
+
 **ask_self_care_tips:** Guidance on self-care to maintain physical and mental health.
+
 **ask_disease_info:** Information about common diseases and health conditions.
+
 **ask_fever_info:** Specific information related to fever symptoms and causes.
 
 # Entities
 Entities are variables that capture specific information from user input. These are used to tailor responses and take appropriate actions based on the context.
 
 **name:** The name of the user or an individual involved.
+
 **employee_id:** Unique identifier for an employee in a work setting.
+
 **date:** Date associated with a query or task.
+
 **reason:** The reason for a particular action or request.
+
 **stress_level:** Level of stress experienced by the user (e.g., low, moderate, high).
+
 **work_hours:** Number of hours worked by the user.
+
 **work_environment:** Description of the user's work environment (e.g., remote, office).
+
 **activity_level:** The user's physical activity level (e.g., sedentary, active).
 
 # Actions
 Actions define the operations the chatbot can perform, based on user input and entities. These actions can help automate tasks or provide personalized recommendations.
 
 **action_send_burnout_email_all:** Sends a burnout alert email to all employees if certain criteria are met.
+
 **action_check_absenteeism:** Checks absenteeism records and provides insights.
+
 **action_track_task:** Tracks the progress of a specific task.
+
 **action_send_burnout_email:** Sends a personalized burnout alert email to an individual.
+
 **action_start_reminder_scheduler:** Starts a reminder scheduler to prompt the user about tasks or wellness activities.
+
 **action_give_health_recommendation:** Provides health recommendations based on the user's input (e.g., stress levels, work hours).
+
 **action_give_personalized_tips:** Delivers personalized tips for better productivity, stress management, and self-care.
+
 **action_chatterbot_response:** Provides conversational responses based on pre-configured chatbot behavior.
 
 # To get started with this Rasa chatbot project, you need to have Python 3.7+ and Rasa installed.
