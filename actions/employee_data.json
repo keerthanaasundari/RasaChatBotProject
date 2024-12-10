@@ -1,0 +1,56 @@
+{
+    "employees": [
+        {
+            "employee_id": "E123",
+            "name": "John Doe",
+            "email": "keeyas56@gmail.com",
+            "work_hours": 8,
+            "work_environment": "remote",
+            "activity_level": "sit",
+            "break_habits": "irregular",
+            "max_stress_level":"High",
+            "absences": [
+                {
+                    "date": "2024-11-20",
+                    "reason": "Sick"
+                },
+                {
+                    "date": "2024-11-25",
+                    "reason": "Vacation"
+                }
+            ],
+            "burnout": [
+                {
+                    "date": "2024-11-18",
+                    "stress_level": "High"
+                },
+                {
+                    "date": "2024-11-30",
+                    "stress_level": "Moderate"
+                }
+            ]
+        },
+        {
+            "employee_id": "E124",
+            "name": "Jane Smith",
+            "email": "keerthanaaksundari@gmail.com",
+            "work_hours": 9,
+            "work_environment": "office",
+            "activity_level": "stand",
+            "break_habits": "regular",
+            "max_stress_level":"Low",
+            "absences": [
+                {
+                    "date": "2024-11-10",
+                    "reason": "Personal"
+                }
+            ],
+            "burnout": [
+                {
+                    "date": "2024-11-15",
+                    "stress_level": "Low"
+                }
+            ]
+        }
+    ]
+}

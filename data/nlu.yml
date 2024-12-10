@@ -1,0 +1,176 @@
+version: "3.1"
+nlu:
+- intent: greet
+  examples: |
+    - hey
+    - hello
+    - hi
+    - hello there
+    - good morning
+    - good evening
+    - moin
+    - hey there
+    - let's go
+    - hey dude
+    - goodmorning
+    - goodevening
+    - good afternoon
+- intent: goodbye
+  examples: |
+    - cu
+    - good by
+    - cee you later
+    - good night
+    - bye
+    - goodbye
+    - have a nice day
+    - see you around
+    - bye bye
+    - see you later
+- intent: affirm
+  examples: |
+    - yes
+    - y
+    - indeed
+    - of course
+    - that sounds good
+    - correct
+- intent: deny
+  examples: |
+    - no
+    - n
+    - never
+    - I don't think so
+    - don't like that
+    - no way
+    - not really
+- intent: mood_great
+  examples: |
+    - perfect
+    - great
+    - amazing
+    - feeling like a king
+    - wonderful
+    - I am feeling very good
+    - I am great
+    - I am amazing
+    - I am going to save the world
+    - super stoked
+    - extremely good
+    - so so perfect
+    - so good
+    - so perfect
+- intent: mood_unhappy
+  examples: |
+    - my day was horrible
+    - I am sad
+    - I don't feel very well
+    - I am disappointed
+    - super sad
+    - I'm so sad
+    - sad
+    - very sad
+    - unhappy
+    - not good
+    - not very good
+    - extremly sad
+    - so saad
+    - so sad
+- intent: bot_challenge
+  examples: |
+    - are you a bot?
+    - are you a human?
+    - am I talking to a bot?
+    - am I talking to a human?
+- intent: track_task
+  examples: |
+    - I need to track a new task.
+    - Can you help me track my task?
+    - I want to track a task.
+    - Add a task to my to-do list.
+    - Record a task.
+    - I need to track
+- intent: check_absenteeism
+  examples: |
+    - check my absent [John Doe](name)
+    - check my absent [Jane Smith](name)
+    - was [John Doe](name) absent
+    - check if [Alice](name) was absent on [2023-12-01](date)
+- intent: send_burnout_email
+  examples: |
+    - send burn out mail to [John Doe](name)
+- intent: send_burnout_email_all
+  examples: |
+    - Please provide burn out charts for all
+    - Provide burn out charts for all
+- intent: get_health_recommendation
+  examples: |
+    - My name is [John Doe](name), I need to know status of my health
+    - I am Jane Smith
+    - It's Alex
+- intent: productivity_tips
+  examples: |
+    - Give me some productivity tips
+    - How can I be more productive?
+    - Any suggestions for improving my productivity?
+
+- intent: focus_tips
+  examples: |
+    - How can I stay focused?
+    - Any tips for improving focus at work?
+    - Help me with focus techniques
+
+- intent: work_hours_intent
+  examples: |
+    - I work [10](work_hours) hours  a day
+    - I work for [9](work_hours) hours each day
+    - I spend [8](work_hours) hours at work
+- intent: work_environment_intent
+  examples: |
+    - I work in a [remote](work_environment) environment
+    - My work environment is [office](work_environment)
+- intent: activity_level_intent
+  examples: |
+    - I will work on [sit](activity_level) position
+    - work and  [walk](activity_level) around 
+    - I will [stand](activity_level) while working
+- intent: ask_for_stress_relief
+  examples: |
+    - I'm feeling stressed
+    - How can I relieve stress?
+    - What can I do to reduce stress?
+    - I need some tips for stress relief
+    - Can you help me with stress?
+    - Stress is making me anxious
+- intent: ask_self_care_tips
+  examples: |
+    - Can you give me some self-care tips?
+    - I need self-care advice
+    - What are some tips for self-care?
+    - Tell me about self-care
+    - How can I take care of myself?
+    - Any self-care suggestions?
+- intent: ask_disease_info
+  examples: |
+    - What is malaria?
+    - Tell me about tuberculosis
+    - Can you explain cancer?
+    - What is diabetes?
+    - What are the symptoms of COVID-19?
+    - How does pneumonia affect the body?
+
+- intent: ask_fever_info
+  examples: |
+    - What is a fever?
+    - Why do I get a fever?
+    - How can I reduce a fever?
+    - What causes high fever?
+    - Tell me about fever and chills
+
+- intent: ask_medicine_recommendation
+  examples: |
+    - What medicine should I take for a cold?
+    - Suggest me some medicine for headache
+    - What is the best medicine for fever?
+    - What medicine do you recommend for sore throat?
+    - Can you tell me the treatment for flu?

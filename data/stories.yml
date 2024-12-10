@@ -1,0 +1,99 @@
+version: "3.1"
+
+stories:
+- story: happy path
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_great
+  - action: utter_happy
+
+- story: sad path 1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_unhappy
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+  - intent: affirm
+  - action: utter_happy
+
+- story: sad path 2
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_unhappy
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+  - intent: deny
+  - action: utter_goodbye
+
+- story: track task flow
+  steps:
+  - intent: track_task
+  - action: action_track_task
+
+- story: check absenteeism
+  steps:
+  - intent: check_absenteeism
+  - action: action_check_absenteeism
+- story: send Burnout report
+  steps:
+  - intent: send_burnout_email
+  - action: action_send_burnout_email
+- story: send Burnout report for all employees
+  steps:
+  - intent: send_burnout_email_all
+  - action: action_send_burnout_email_all
+- story: personalized_health_recommendation
+  steps:
+    - intent: get_health_recommendation
+    - action: action_give_health_recommendation
+- story: interactive_story_1
+  steps:
+  - intent: send_burnout_email_all
+  - action: action_send_burnout_email_all
+- story: give productivity tips
+  steps:
+  - intent: productivity_tips
+  - action: utter_productivity_tips
+
+- story: give focus tips
+  steps:
+  - intent: focus_tips
+  - action: utter_focus_tips
+
+- story: personalized tips based on user data 1
+  steps:
+  - intent: work_hours_intent
+  - action: action_give_personalized_tips
+- story: personalized tips based on user data 2
+  steps:
+  - intent: work_environment_intent
+  - action: action_give_personalized_tips
+- story: personalized tips based on user data 3
+  steps:
+  - intent: activity_level_intent
+  - action: action_give_personalized_tips
+- story: Stress relief conversation
+  steps:
+  - intent: ask_for_stress_relief
+  - action: utter_stress_relief
+- story: user asks about disease
+  steps:
+  - intent: ask_disease_info
+  - action: action_chatterbot_response
+
+- story: user asks about fever
+  steps:
+  - intent: ask_fever_info
+  - action: action_chatterbot_response
+
+- story: user asks for medicine recommendation
+  steps:
+  - intent: ask_medicine_recommendation
+  - action: action_chatterbot_response
+- story: User asks for self-care tips
+  steps:
+  - intent: ask_self_care_tips
+  - action: utter_self_care_tips
