@@ -1,0 +1,158 @@
+---
+version: "3.1"
+intents:
+  - affirm
+  - bot_challenge
+  - check_absenteeism
+  - deny
+  - get_health_recommendation
+  - get_help
+  - get_logs
+  - goodbye
+  - greet
+  - inform
+  - mood_great
+  - mood_unhappy
+  - send_burnout_email
+  - send_burnout_email_all
+  - set_goal
+  - track_task
+  - activity_level_intent
+  - work_hours_intent
+  - work_environment_intent
+  - productivity_tips
+  - focus_tips
+  - ask_for_stress_relief
+  - ask_self_care_tips
+  - ask_disease_info
+  - ask_fever_info
+  - ask_medicine_recommendation
+entities:
+  - name
+  - employee_id
+  - date
+  - reason
+  - stress_level
+  - work_hours
+  - work_environment
+  - activity_level
+actions:
+  - action_send_burnout_email_all
+  - action_check_absenteeism
+  - action_track_task
+  - action_send_burnout_email
+  - action_start_reminder_scheduler
+  - action_give_health_recommendation
+  - action_give_personalized_tips
+  - action_chatterbot_response
+slots:
+  name:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: name
+  employee_id:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: employee_id
+    influence_conversation: false
+  date:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: date
+  reason:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: reason
+  stress_level:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: stress_level
+  work_hours:
+    type: float
+    mappings:
+      - type: from_entity
+        entity: work_hours
+  work_environment:
+    type: categorical
+    values:
+      - remote
+      - office
+    mappings:
+      - type: from_entity
+        entity: work_environment
+  activity_level:
+    type: categorical
+    values:
+      - sit
+      - stand
+      - walk
+    mappings:
+      - type: from_entity
+        entity: activity_level
+responses:
+  utter_greet:
+    - text: Hey! How are you?
+  utter_cheer_up:
+    - text: "Here is something to cheer you up:"
+      image: https://i.imgur.com/nGF1K8f.jpg
+  utter_did_that_help:
+    - text: Did that help you?
+  utter_happy:
+    - text: Great, carry on!
+  utter_goodbye:
+    - text: Goodbye! Stay healthy!
+  utter_iamabot:
+    - text: I am a bot, powered by Rasa.
+  utter_check_absenteeism:
+    - text: Fetching your absenteeism records...
+  utter_burnout_report:
+    - text: Burnout report has been sent via email.
+  utter_productivity_tips:
+    - text: |+
+        Here are some productivity tips:
+          - Break your tasks into smaller, manageable chunks.
+          - Set clear and specific goals for each day.
+          - Take short breaks (5-10 minutes) every hour.
+          - Eliminate distractions during work (e.g., phone, social media).
+          - Use the Pomodoro technique for better time management.
+          
+  utter_focus_tips:
+    - text: >
+        To improve your focus, try these techniques:
+          - Practice mindfulness or meditation to clear your mind.
+          - Minimize distractions by using noise-canceling headphones or working in a quiet place.
+          - Set specific goals and focus on one task at a time.
+          - Use a focus timer (e.g., Pomodoro) to stay on track.
+          - Take regular breaks to refresh your brain.
+  utter_stress_relief:
+    - text: >
+        Here are some tips to relieve stress:
+          - **Exercise**: Regular physical activity can help reduce stress and increase endorphins.
+          - **Mindfulness and Meditation**: Taking a few moments to practice mindfulness or deep breathing exercises can calm your mind.
+          - **Sleep**: Ensure you're getting enough sleep (7-9 hours) to recharge your body and mind.
+          - **Socializing**: Talk to someone you trust, it’s always helpful to share how you feel.
+          - **Breaks**: Take short breaks during the day to relax and recharge.
+          - **Time in Nature**: Spending time outside in nature can help reduce stress levels.
+  utter_self_care_tips:
+    - text: |
+        - Take regular breaks during work to prevent burnout.
+        - Drink plenty of water throughout the day.
+        - Engage in regular physical activity, even if it's just a walk.
+        - Practice mindfulness or meditation to reduce stress.
+        - Make time for hobbies or activities that bring you joy.
+        - Maintain a balanced diet with plenty of fruits and vegetables.
+        - Get enough sleep every night to allow your body to recover.
+  utter_thanks:
+    - text: You're welcome! Take care!
+  utter_default:
+    - text: Sorry, I didn't quite catch that. Could you please clarify?
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
+pipeline:
+  - name: RegexEntityExtractor

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rasa Chatbot</title>
+  
+  <!-- Include Vue.js -->
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.min.js"></script>
+
+  <!-- Include BotUI CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/botui/build/botui.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/botui/build/botui-theme-default.css" rel="stylesheet">
+
+  <!-- Include BotUI JavaScript -->
+  <script src="https://cdn.jsdelivr.net/npm/botui/build/botui.min.js"></script>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+    #chatbox {
+      width: 350px;
+      height: 500px;
+      border: 1px solid #ccc;
+      padding: 20px;
+      border-radius: 5px;
+      background-color: #f9f9f9;
+    }
+  </style>
+</head>
+<body>
+  <div id="chatbox"></div>
+
+  <script>
+    // Wait until the DOM is fully loaded to initialize BotUI
+    document.addEventListener("DOMContentLoaded", function() {
+      // Initialize BotUI and ensure the 'chatbox' div exists
+      const botui = new BotUI('chatbox');
+
+      // Add the initial greeting message
+      botui.message.add({
+        content: 'Hello! How can I assist you today?'
+      }).then(() => {
+        // After greeting, prompt user for input
+        promptUser();
+      });
+
+      // Function to prompt the user for input
+      function promptUser() {
+        botui.action.text({
+          action: {
+            placeholder: 'Type your message here'
+          }
+        }).then(function(res) {
+          sendToRasa(res.text); // Send the user message to Rasa
+        });
+      }
+
+      // Function to send the message to the Rasa backend
+      function sendToRasa(message) {
+        fetch('http://localhost:5005/webhooks/rest/webhook', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({ message: message })
+        })
+        .then(response => response.json())
+        .then(data => {
+          // Display the bot's response
+          const botReply = data[0]?.text || 'Sorry, I did not understand that.';
+          botui.message.add({
+            content: botReply
+          }).then(() => {
+            // After bot responds, prompt the user again
+            promptUser();
+          });
+        })
+        .catch(err => {
+          botui.message.add({
+            content: 'Error: ' + err
+          });
+        });
+      }
+    });
+  </script>
+</body>
+</html>
