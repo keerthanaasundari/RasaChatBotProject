@@ -2,7 +2,8 @@
 
 This Rasa chatbot project is designed to provide productivity tips, stress relief, self-care advice, disease and fever-related information, as well as personalized health recommendations. The bot responds to users' queries regarding their productivity, mental health, and physical well-being, offering tailored suggestions based on the provided context.
 
-**Project Structure**
+# Project Structure
+
 **Intents**
 The chatbot includes several intents that cover a range of topics related to productivity, health, and personal well-being:
 
@@ -13,7 +14,7 @@ The chatbot includes several intents that cover a range of topics related to pro
 **ask_disease_info:** Information about common diseases and health conditions.
 **ask_fever_info:** Specific information related to fever symptoms and causes.
 
-**Entities**
+# Entities
 Entities are variables that capture specific information from user input. These are used to tailor responses and take appropriate actions based on the context.
 
 **name:** The name of the user or an individual involved.
@@ -25,7 +26,7 @@ Entities are variables that capture specific information from user input. These 
 **work_environment:** Description of the user's work environment (e.g., remote, office).
 **activity_level:** The user's physical activity level (e.g., sedentary, active).
 
-**Actions**
+# Actions
 Actions define the operations the chatbot can perform, based on user input and entities. These actions can help automate tasks or provide personalized recommendations.
 
 **action_send_burnout_email_all:** Sends a burnout alert email to all employees if certain criteria are met.
@@ -37,7 +38,7 @@ Actions define the operations the chatbot can perform, based on user input and e
 **action_give_personalized_tips:** Delivers personalized tips for better productivity, stress management, and self-care.
 **action_chatterbot_response:** Provides conversational responses based on pre-configured chatbot behavior.
 
-To get started with this Rasa chatbot project, you need to have Python 3.7+ and Rasa installed.
+# To get started with this Rasa chatbot project, you need to have Python 3.7+ and Rasa installed.
 
 **Clone the repository:**
 git clone https://github.com/yourusername/productivity-chatbot.git
