@@ -110,19 +110,13 @@ Rasa uses environment variables to securely manage sensitive data such as API ke
 - Create an .env file in the root of your Rasa project. This file will hold all your API keys and credentials.
 
 **Add the following environment variables in the .env file for Google Calendar API, Gmail API, and other related services:**
-
-- **Google API OAuth 2.0 credentials**
-
-GOOGLE_CLIENT_ID=your-google-client-id
-GOOGLE_CLIENT_SECRET=your-google-client-secret
-GOOGLE_REFRESH_TOKEN=your-google-refresh-token
-
-- **Calendar API Scopes (Optional)**
-
-GOOGLE_CALENDAR_SCOPE=https://www.googleapis.com/auth/calendar
-GOOGLE_GMAIL_SCOPE=https://www.googleapis.com/auth/gmail.readonly
-
-- **API keys for external services**
-
-API_KEY=your-api-key-here
-CSI_KEY=your-csi-key-here
+**Google API OAuth 2.0 credentials**
+- GOOGLE_CLIENT_ID=your-google-client-id
+- GOOGLE_CLIENT_SECRET=your-google-client-secret
+- GOOGLE_REFRESH_TOKEN=your-google-refresh-token
+**Calendar API Scopes (Optional)**
+- GOOGLE_CALENDAR_SCOPE=https://www.googleapis.com/auth/calendar
+- GOOGLE_GMAIL_SCOPE=https://www.googleapis.com/auth/gmail.readonly
+**API keys for external services**
+- API_KEY=your-api-key-here
+- CSI_KEY=your-csi-key-here
